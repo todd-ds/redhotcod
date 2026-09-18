@@ -1,11 +1,11 @@
 {
-  "address": "Shop 1/1716 Gold Coast Highway, Burleigh Heads",
-  "hours": "Open daily 10:30am – 7:30pm",
-  "surcharge_note": "Weekend surcharge 10% · Public holiday surcharge 15%",
-  "phone_display": "(07) 5607 0084",
-  "phone_href": "tel:0756070084",
   "instagram_url": "https://www.instagram.com/redhotcodburleigh/",
+  "surcharge_note": "Weekend surcharge 10% · Public holiday surcharge 15%",
+  "hours": "Open daily 10:30am – 7:30pm",
+  "phone_display": "(07) 5607 0084",
+  "address": "Shop 1/1716 Gold Coast Highway, Burleigh Heads",
   "instagram_handle": "@redhotcodburleigh",
   "facebook_url": "https://www.facebook.com/redhotcodburleigh/",
-  "order_url": "#"
+  "phone_href": "tel:0756070084",
+  "order_url": "https://red-hot-cod.square.site/"
 }
