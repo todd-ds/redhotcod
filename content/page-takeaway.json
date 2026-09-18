@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Fish & Chips Takeaway",
+  "title": "Fresh Off The Boat, Straight Into Paper",
+  "hero_image": "images/hero-takeaway.jpg",
+  "hero_alt": "A box of beer-battered fish, calamari, prawns and chips on a picnic blanket at the beach",
+  "body": [
+    "This is where Red Hot Cod started, and it's still the heart of the shop: wild-caught cod, flake, dory, snapper and Tassie salmon, battered or grilled to order and wrapped up for the beach across the road.",
+    "Walk up to the counter, phone ahead, or order online for pickup. Gluten-free batter is available on request, and everything comes in eco-friendly packaging."
+  ],
+  "highlights": [
+    { "title": "Beer-Battered Fish", "body": "Cod, dory, snapper, flake or sea perch, battered fresh to order." },
+    { "title": "Coconut Prawns", "body": "Crumbed in coconut and served with sweet chilli." },
+    { "title": "Calamari & Oysters", "body": "Fresh off the boat, cooked light and crisp." },
+    { "title": "Gluten-Free Batter", "body": "Available on request, at a small extra charge." }
+  ],
+  "gallery": [
+    { "theme": "ph-chili", "image": "images/hero-takeaway.jpg", "alt": "A box of beer-battered fish, calamari, prawns and chips on a picnic blanket", "caption": "Beach day, straight from the box" },
+    { "theme": "ph-gold", "image": "images/dish-spread.jpg", "alt": "An overhead spread of spring rolls, fish and chips, coleslaw and satay skewers", "caption": "Fresh off the pass" }
+  ],
+  "cta_text": "Order Takeaway Online"
+}

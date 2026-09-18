@@ -1,0 +1,21 @@
+{
+  "eyebrow": "The Restaurant",
+  "title": "Sit Down. Order The Whole Menu.",
+  "hero_image": "images/nasi-bowls-a.jpg",
+  "hero_alt": "Two bowls of nasi goreng topped with a fried egg, shot from above on a wooden table",
+  "body": [
+    "Full table service and the whole menu, from wild-caught fish of the day to Bali and poke bowls, Balinese chicken satay and Nasi Goreng, for when you want to stay a while.",
+    "We're fully licensed for beer and wine, and gluten-free options are available across the menu."
+  ],
+  "highlights": [
+    { "title": "Grilled Fish of the Day", "body": "Simply grilled and served with your choice of sides." },
+    { "title": "Nasi Goreng", "body": "Indonesian fried rice, a Red Hot Cod classic." },
+    { "title": "Bali Bowl & Poke Bowl", "body": "Fresh, light and packed with flavour." },
+    { "title": "Balinese Chicken Satay", "body": "House-made satay sauce — a customer favourite." }
+  ],
+  "gallery": [
+    { "theme": "ph-gold", "image": "images/nasi-bowls-a.jpg", "alt": "Two bowls of nasi goreng topped with a fried egg", "caption": "Table service, full menu, sunset views" },
+    { "theme": "ph-ink", "image": "images/nasi-bowl-single.jpg", "alt": "A bowl of nasi goreng topped with a fried egg, bean sprouts and cherry tomatoes", "caption": "Wild-caught, cooked your way" }
+  ],
+  "cta_text": "Call To Book A Table"
+}

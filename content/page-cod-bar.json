@@ -1,0 +1,22 @@
+{
+  "eyebrow": "The Cod Bar",
+  "badge": "New",
+  "title": "Cold Beer. Small Plates. Good Nights.",
+  "hero_image": "images/bar-scene.jpg",
+  "hero_alt": "A crowd cheering under string lights at the Red Hot Cod bar, DJ decks in the foreground",
+  "body": [
+    "Our new bar concept lands this summer, right next door to the original shop: a beer garden and bar built around small plates, cold beer and Balinese-inspired bites, with the same ocean-view energy as the takeaway shop next door.",
+    "Opening hours, the drinks list and the small-plates menu are still being finalised — follow along on Instagram for the announcement."
+  ],
+  "highlights": [
+    { "title": "Beer Garden", "body": "Cold beer on tap, outdoors, with an ocean view." },
+    { "title": "Small Plates", "body": "Shareable bites built around the same wild-caught seafood." },
+    { "title": "Balinese-Inspired Bites", "body": "The same street-food flavours as the takeaway menu, bar-sized." }
+  ],
+  "note": "Opening hours and the bar menu will be announced closer to launch — follow @redhotcodburleigh for updates.",
+  "gallery": [
+    { "theme": "ph-teal", "image": "images/bar-scene.jpg", "alt": "A crowd cheering under string lights at the Red Hot Cod bar", "caption": "The Cod Bar — cold beer, good nights" },
+    { "theme": "ph-ink", "image": "images/hiring-poster.jpg", "alt": "We're Hiring poster for FOH, kitchen staff and bartenders", "caption": "We're hiring bartenders for the new bar" }
+  ],
+  "cta_text": "Follow For Opening Updates"
+}

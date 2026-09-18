@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cod Bar — Red Hot Cod, Burleigh Heads</title>
+<meta name="description" content="A new beer garden and bar concept from Red Hot Cod, opening this summer next door to the original takeaway shop.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div style="width: 100%; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-left">
+        <span class="utility-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.4 7-13a7 7 0 1 0-14 0c0 5.6 7 13 7 13Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+          <span data-bind="contact.address"></span>
+        </span>
+        <span class="utility-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+          <span data-bind="contact.hours"></span>
+        </span>
+      </div>
+      <div class="utility-right">
+        <a data-bind-href="contact.phone_href" class="utility-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z"></path></svg>
+          <span data-bind="contact.phone_display"></span>
+        </a>
+        <a data-bind-href="contact.instagram_url" aria-label="Red Hot Cod on Instagram" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container">
+      <a class="logo" href="index.html"><span class="logo-dot"></span>RED <span class="logo-hot">HOT</span> COD</a>
+      <nav class="nav-links">
+        <a href="takeaway.html" data-page="takeaway">Takeaway</a>
+        <a href="cod-bar.html" data-page="cod-bar">Cod Bar</a>
+        <a href="restaurant.html" data-page="restaurant">Restaurant</a>
+        <a href="menu.html" data-page="menu">Menu</a>
+        <a href="index.html#about" data-page="about">About</a>
+        <a href="index.html#visit" data-page="visit">Visit</a>
+      </nav>
+      <div class="nav-cta">
+        <a data-bind-href="contact.order_url" class="btn btn-chili">Order Online</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <img class="hero-slide-img" id="page-hero-img" src="" alt="">
+    <div class="page-hero-copy">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / <span id="breadcrumb-current"></span></div>
+        <span class="eyebrow" style="color:#4C86F0;" id="page-eyebrow"></span><span class="badge-new" id="page-badge" style="display:none;"></span>
+        <h1 id="page-title"></h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container narrow">
+      <div class="page-body" id="page-body"></div>
+      <div class="page-cta-row">
+        <a data-bind-href="contact.instagram_url" class="btn btn-chili" id="page-cta" target="_blank" rel="noopener"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color:#D6401F;">What To Expect</span>
+        <h2>Beer garden, small plates</h2>
+      </div>
+      <div class="menu-grid" id="highlights-grid"></div>
+      <div class="menu-note">
+        <p id="page-note"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-bind="contact.instagram_handle"></span>
+        <h2>Watch this space</h2>
+      </div>
+      <div class="gallery-grid two-col" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="logo"><span class="logo-dot"></span>RED <span class="logo-hot">HOT</span> COD</div>
+          <p class="footer-tagline">Served fresh daily across the road from Burleigh Heads beach. It's why we're No.1.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="takeaway.html">Takeaway</a></li>
+            <li><a href="cod-bar.html">Cod Bar</a></li>
+            <li><a href="restaurant.html">Restaurant</a></li>
+            <li><a href="menu.html">Menu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="index.html#visit">Hours &amp; Location</a></li>
+            <li><a data-bind-href="contact.phone_href"><span data-bind="contact.phone_display"></span></a></li>
+            <li><a href="index.html#about">Our Story</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <div class="social-row">
+            <a data-bind-href="contact.instagram_url" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
+            </a>
+            <a data-bind-href="contact.facebook_url" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4v-2a1 1 0 0 1 1-1Z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Red Hot Cod, Burleigh Heads. All rights reserved.</span>
+        <span>Content managed with Decap CMS.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/common.js"></script>
+<script>
+(function () {
+  RHC.markCurrentNav('cod-bar');
+
+  Promise.all([
+    RHC.fetchJSON('content/contact.json'),
+    RHC.fetchJSON('content/page-cod-bar.json')
+  ]).then(function (results) {
+    var contact = results[0];
+    var page = results[1];
+
+    RHC.bindStatics(document, { contact: contact });
+
+    document.getElementById('page-hero-img').src = page.hero_image;
+    document.getElementById('page-hero-img').alt = page.hero_alt;
+    document.getElementById('breadcrumb-current').textContent = page.eyebrow;
+    document.getElementById('page-eyebrow').textContent = page.eyebrow;
+    if (page.badge) {
+      var badgeEl = document.getElementById('page-badge');
+      badgeEl.textContent = page.badge;
+      badgeEl.style.display = 'inline-block';
+    }
+    document.getElementById('page-title').textContent = page.title;
+    document.getElementById('page-body').innerHTML = page.body.map(function (p) {
+      return '<p>' + p + '</p>';
+    }).join('');
+    document.getElementById('page-cta').textContent = page.cta_text;
+    document.getElementById('page-note').textContent = page.note;
+
+    document.getElementById('highlights-grid').innerHTML = page.highlights.map(function (h) {
+      return '<div class="menu-item"><h3>' + h.title + '</h3><p>' + h.body + '</p></div>';
+    }).join('');
+
+    document.getElementById('gallery-grid').innerHTML = page.gallery.map(function (g) {
+      return (
+        '<div class="ph-block ' + g.theme + '">' +
+          '<img src="' + g.image + '" alt="' + g.alt + '">' +
+          '<div class="ph-caption">' + g.caption + '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }).catch(function (err) {
+    console.error('Could not load page content', err);
+  });
+})();
+</script>
+
+</body>
+</html>

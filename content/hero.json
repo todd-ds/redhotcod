@@ -9,7 +9,7 @@
       "title": "Served Fresh Daily.\nIt's Why We're No.1.",
       "body": "Wild-caught cod, flake, dory, snapper and Tassie salmon, beer-battered, grilled or crumbed, with gluten-free batter on request. Walk up, order online, eat on the sand.",
       "cta_text": "Order Takeaway",
-      "cta_href": "#menu"
+      "cta_href": "takeaway.html"
     },
     {
       "theme": "ph-teal",
@@ -20,7 +20,7 @@
       "title": "Cold Beer.\nHot Off The Grill.",
       "body": "Our new bar concept lands this summer: small plates, local beer and an ocean view, right next door to the original shop.",
       "cta_text": "Explore The Cod Bar",
-      "cta_href": "#cod-bar"
+      "cta_href": "cod-bar.html"
     },
     {
       "theme": "ph-gold",
@@ -31,7 +31,7 @@
       "title": "Sit Down.\nSlow Down.",
       "body": "Table service, the full menu and a wine list to match, for when you want to stay a while and watch the sun go down over Burleigh.",
       "cta_text": "Book A Table",
-      "cta_href": "#restaurant"
+      "cta_href": "restaurant.html"
     }
   ]
 }

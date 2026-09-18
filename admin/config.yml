@@ -127,3 +127,115 @@ collections:
               - { label: "Photo", name: "image", widget: "image" }
               - { label: "Photo alt text", name: "alt", widget: "string" }
               - { label: "Caption", name: "caption", widget: "string" }
+
+      - name: "page_takeaway"
+        label: "Page: Takeaway"
+        file: "content/page-takeaway.json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "title", widget: "string" }
+          - { label: "Banner photo", name: "hero_image", widget: "image" }
+          - { label: "Banner photo alt text", name: "hero_alt", widget: "string" }
+          - name: "body"
+            label: "Body Paragraphs"
+            widget: "list"
+          - name: "highlights"
+            label: "Menu Highlights"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Dish name", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+          - name: "gallery"
+            label: "Photos"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Theme colour", name: "theme", widget: "select", options: ["ph-chili", "ph-teal", "ph-gold", "ph-ink"] }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Button text", name: "cta_text", widget: "string", hint: "This button links to your online ordering URL, set on the Contact page." }
+
+      - name: "page_cod_bar"
+        label: "Page: The Cod Bar"
+        file: "content/page-cod-bar.json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Badge text (leave blank for none)", name: "badge", widget: "string", required: false }
+          - { label: "Heading", name: "title", widget: "string" }
+          - { label: "Banner photo", name: "hero_image", widget: "image" }
+          - { label: "Banner photo alt text", name: "hero_alt", widget: "string" }
+          - name: "body"
+            label: "Body Paragraphs"
+            widget: "list"
+          - name: "highlights"
+            label: "What To Expect"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+          - { label: "Note (e.g. opening hours TBA)", name: "note", widget: "text" }
+          - name: "gallery"
+            label: "Photos"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Theme colour", name: "theme", widget: "select", options: ["ph-chili", "ph-teal", "ph-gold", "ph-ink"] }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Button text", name: "cta_text", widget: "string", hint: "This button links to your Instagram URL, set on the Contact page." }
+
+      - name: "page_restaurant"
+        label: "Page: The Restaurant"
+        file: "content/page-restaurant.json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "title", widget: "string" }
+          - { label: "Banner photo", name: "hero_image", widget: "image" }
+          - { label: "Banner photo alt text", name: "hero_alt", widget: "string" }
+          - name: "body"
+            label: "Body Paragraphs"
+            widget: "list"
+          - name: "highlights"
+            label: "Menu Highlights"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Dish name", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+          - name: "gallery"
+            label: "Photos"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Theme colour", name: "theme", widget: "select", options: ["ph-chili", "ph-teal", "ph-gold", "ph-ink"] }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Button text", name: "cta_text", widget: "string", hint: "This button links to your phone number, set on the Contact page." }
+
+      - name: "page_menu"
+        label: "Page: Full Menu"
+        file: "content/page-menu.json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "title", widget: "string" }
+          - { label: "Intro paragraph", name: "intro", widget: "text" }
+          - { label: "Note under the menu (pricing/surcharges)", name: "note", widget: "text" }
+          - { label: "Button text", name: "cta_text", widget: "string", hint: "This button links to your online ordering URL, set on the Contact page." }
+          - name: "categories"
+            label: "Menu Categories"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Category name", name: "name", widget: "string" }
+              - name: "items"
+                label: "Dishes"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Dish name", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }

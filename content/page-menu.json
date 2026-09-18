@@ -1,0 +1,44 @@
+{
+  "eyebrow": "Full Menu",
+  "title": "Everything On The Menu",
+  "intro": "Wild-caught Australian and New Zealand seafood, cooked your way, alongside a menu of Indonesian street food favourites. Full current pricing and gluten-free options are on our online ordering page.",
+  "note": "Weekend surcharge 10% · Public holiday surcharge 15%. Prices are updated on our online ordering page and can change without notice.",
+  "categories": [
+    {
+      "name": "Beer-Battered & Grilled Fish",
+      "items": [
+        { "title": "Beer-Battered Fish", "desc": "Cod, dory, snapper, flake or sea perch, battered fresh to order." },
+        { "title": "Grilled Fish of the Day", "desc": "Simply grilled and served with your choice of sides." },
+        { "title": "Crumbed Fish", "desc": "Lightly crumbed, served with chips and salad." },
+        { "title": "Gluten-Free Batter", "desc": "Available on any battered fish, at a small extra charge." }
+      ]
+    },
+    {
+      "name": "From The Fryer",
+      "items": [
+        { "title": "Coconut Prawns", "desc": "Crumbed in coconut and served with sweet chilli." },
+        { "title": "Calamari", "desc": "Fresh off the boat, cooked light and crisp." },
+        { "title": "Oysters", "desc": "Served natural or lightly crumbed." },
+        { "title": "Spring Rolls", "desc": "Crisp Indonesian-style spring rolls." }
+      ]
+    },
+    {
+      "name": "Balinese Street Food",
+      "items": [
+        { "title": "Balinese Chicken Satay", "desc": "House-made satay sauce — a customer favourite." },
+        { "title": "Nasi Goreng", "desc": "Indonesian fried rice, a Red Hot Cod classic." },
+        { "title": "Coconut Curry Beef", "desc": "Slow-cooked beef in a coconut curry sauce." }
+      ]
+    },
+    {
+      "name": "Bowls & Salads",
+      "items": [
+        { "title": "Bali Bowl", "desc": "Fresh, light and packed with flavour." },
+        { "title": "Poke Bowl", "desc": "Raw fish, rice and fresh vegetables." },
+        { "title": "Garden Salad", "desc": "For the lighter option, made fresh daily." },
+        { "title": "Greek Salad", "desc": "Classic Greek salad with feta and olives." }
+      ]
+    }
+  ],
+  "cta_text": "Order Online"
+}
