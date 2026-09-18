@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "label": "Takeaway", "url": "takeaway.html", "visible": true },
+    { "label": "Cod Bar", "url": "cod-bar.html", "visible": true },
+    { "label": "Restaurant", "url": "restaurant.html", "visible": true },
+    { "label": "Menu", "url": "menu.html", "visible": true },
+    { "label": "About", "url": "index.html#about", "visible": true },
+    { "label": "Visit", "url": "index.html#visit", "visible": true }
+  ]
+}

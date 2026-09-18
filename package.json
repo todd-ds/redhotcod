@@ -1,0 +1,9 @@
+{
+  "name": "redhotcod",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Red Hot Cod website. Static HTML/CSS/JS with a small Node script that generates pages from Decap CMS content.",
+  "scripts": {
+    "build": "node scripts/build-pages.js"
+  }
+}

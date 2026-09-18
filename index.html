@@ -39,14 +39,7 @@
   <header class="nav">
     <div class="container">
       <div class="logo"><span class="logo-dot"></span>RED <span class="logo-hot">HOT</span> COD</div>
-      <nav class="nav-links">
-        <a href="takeaway.html" data-page="takeaway">Takeaway</a>
-        <a href="cod-bar.html" data-page="cod-bar">Cod Bar</a>
-        <a href="restaurant.html" data-page="restaurant">Restaurant</a>
-        <a href="menu.html" data-page="menu">Menu</a>
-        <a href="index.html#about" data-page="about">About</a>
-        <a href="index.html#visit" data-page="visit">Visit</a>
-      </nav>
+      <nav class="nav-links"></nav>
       <div class="nav-cta">
         <a data-bind-href="contact.order_url" class="btn btn-chili">Order Online</a>
       </div>
@@ -161,12 +154,7 @@
         </div>
         <div>
           <h4>Explore</h4>
-          <ul>
-            <li><a href="takeaway.html">Takeaway</a></li>
-            <li><a href="cod-bar.html">Cod Bar</a></li>
-            <li><a href="restaurant.html">Restaurant</a></li>
-            <li><a href="menu.html">Menu</a></li>
-          </ul>
+          <ul id="footer-explore-list"></ul>
         </div>
         <div>
           <h4>Visit</h4>
@@ -201,7 +189,6 @@
 <script>
 (function () {
   var bindStatics = function (data) { RHC.bindStatics(document, data); };
-  RHC.markCurrentNav('home');
 
   function renderHero(hero) {
     var slidesEl = document.getElementById('hero-slides');
@@ -309,7 +296,8 @@
     RHC.fetchJSON('content/venues.json'),
     RHC.fetchJSON('content/about.json'),
     RHC.fetchJSON('content/menu.json'),
-    RHC.fetchJSON('content/gallery.json')
+    RHC.fetchJSON('content/gallery.json'),
+    RHC.fetchJSON('content/navigation.json')
   ])
     .then(function (results) {
       var data = {
@@ -320,6 +308,9 @@
         menu: results[4],
         gallery: results[5]
       };
+      var nav = results[6];
+      RHC.renderNav(nav.items, 'home');
+      RHC.renderFooterNav(nav.items);
       bindStatics(data);
       renderHero(data.hero);
       renderVenues(data.venues);

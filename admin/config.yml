@@ -128,6 +128,21 @@ collections:
               - { label: "Photo alt text", name: "alt", widget: "string" }
               - { label: "Caption", name: "caption", widget: "string" }
 
+      - name: "navigation"
+        label: "Navigation Menu"
+        file: "content/navigation.json"
+        description: "Controls the menu links shown at the top of every page and in the footer. Creating a new Page does not add it here automatically: create the page first, then add or reorder its link below once it exists."
+        fields:
+          - name: "items"
+            label: "Menu Items"
+            widget: "list"
+            summary: "{{fields.label}}"
+            hint: "Drag items to reorder them. This same list powers the top menu and the footer 'Explore' links."
+            fields:
+              - { label: "Label (shown in the menu)", name: "label", widget: "string" }
+              - { label: "Link", name: "url", widget: "string", hint: "e.g. takeaway.html, cod-bar.html, index.html#about (a section of the homepage), or a full external URL (https://...) where appropriate." }
+              - { label: "Show in navigation", name: "visible", widget: "boolean", default: true }
+
       - name: "page_takeaway"
         label: "Page: Takeaway"
         file: "content/page-takeaway.json"
@@ -239,3 +254,27 @@ collections:
                 fields:
                   - { label: "Dish name", name: "title", widget: "string" }
                   - { label: "Description", name: "desc", widget: "text" }
+
+  # Generic pages the client can create freely. Each entry here becomes its
+  # own HTML page, generated at build time by scripts/build-pages.js, at
+  # yoursite.com/<page-name>.html. Unlike the "content" collection above,
+  # this is a folder collection: the client clicks "New Page" and gets a
+  # blank page rather than editing a fixed, pre-declared list of files.
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    description: "Create a new page. It will be generated automatically and published at its own web address."
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meta description", name: "meta_description", widget: "text", hint: "Shown in Google search results. Keep it short and descriptive." }
+      - { label: "Banner photo", name: "hero_image", widget: "image", required: false }
+      - { label: "Banner photo alt text", name: "hero_alt", widget: "string", required: false }
+      - name: "body"
+        label: "Body Paragraphs"
+        widget: "list"
+        hint: "Add one item per paragraph."
+      - { label: "Button text (optional)", name: "cta_text", widget: "string", required: false }
+      - { label: "Button link (optional)", name: "cta_href", widget: "string", required: false }

@@ -29,5 +29,62 @@ window.RHC = (function () {
     });
   }
 
-  return { byPath: byPath, bindStatics: bindStatics, fetchJSON: fetchJSON, markCurrentNav: markCurrentNav };
+  function escapeHtml(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  // A nav item's "key" (for current-page highlighting) is derived from its
+  // URL rather than stored separately in the CMS: the part after "#" for
+  // an anchor link, otherwise the filename without ".html". This exactly
+  // reproduces the data-page values every page already used.
+  function deriveNavKey(url) {
+    var hashIndex = url.indexOf('#');
+    if (hashIndex !== -1) return url.slice(hashIndex + 1);
+    var file = url.split('/').pop();
+    return file.replace(/\.html$/, '');
+  }
+
+  // Renders the main nav (content/navigation.json) into the .nav-links
+  // element every page already has, highlighting whichever item matches
+  // currentKey (the value each page already passed to markCurrentNav).
+  function renderNav(items, currentKey) {
+    var el = document.querySelector('.nav-links');
+    if (!el) return;
+    el.innerHTML = (items || [])
+      .filter(function (item) { return item.visible !== false; })
+      .map(function (item) {
+        var key = deriveNavKey(item.url);
+        var currentAttr = key === currentKey ? ' class="current"' : '';
+        return (
+          '<a href="' + escapeHtml(item.url) + '" data-page="' + escapeHtml(key) + '"' + currentAttr + '>' +
+            escapeHtml(item.label) +
+          '</a>'
+        );
+      })
+      .join('');
+  }
+
+  // Renders the footer "Explore" list from the same navigation data, only
+  // real pages (no "#" anchors), matching the original hardcoded footer.
+  function renderFooterNav(items) {
+    var el = document.getElementById('footer-explore-list');
+    if (!el) return;
+    el.innerHTML = (items || [])
+      .filter(function (item) { return item.visible !== false && item.url.indexOf('#') === -1; })
+      .map(function (item) {
+        return '<li><a href="' + escapeHtml(item.url) + '">' + escapeHtml(item.label) + '</a></li>';
+      })
+      .join('');
+  }
+
+  return {
+    byPath: byPath,
+    bindStatics: bindStatics,
+    fetchJSON: fetchJSON,
+    markCurrentNav: markCurrentNav,
+    renderNav: renderNav,
+    renderFooterNav: renderFooterNav
+  };
 })();

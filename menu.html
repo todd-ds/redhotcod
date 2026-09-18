@@ -39,14 +39,7 @@
   <header class="nav">
     <div class="container">
       <a class="logo" href="index.html"><span class="logo-dot"></span>RED <span class="logo-hot">HOT</span> COD</a>
-      <nav class="nav-links">
-        <a href="takeaway.html" data-page="takeaway">Takeaway</a>
-        <a href="cod-bar.html" data-page="cod-bar">Cod Bar</a>
-        <a href="restaurant.html" data-page="restaurant">Restaurant</a>
-        <a href="menu.html" data-page="menu">Menu</a>
-        <a href="index.html#about" data-page="about">About</a>
-        <a href="index.html#visit" data-page="visit">Visit</a>
-      </nav>
+      <nav class="nav-links"></nav>
       <div class="nav-cta">
         <a data-bind-href="contact.order_url" class="btn btn-chili">Order Online</a>
       </div>
@@ -91,12 +84,7 @@
         </div>
         <div>
           <h4>Explore</h4>
-          <ul>
-            <li><a href="takeaway.html">Takeaway</a></li>
-            <li><a href="cod-bar.html">Cod Bar</a></li>
-            <li><a href="restaurant.html">Restaurant</a></li>
-            <li><a href="menu.html">Menu</a></li>
-          </ul>
+          <ul id="footer-explore-list"></ul>
         </div>
         <div>
           <h4>Visit</h4>
@@ -130,15 +118,17 @@
 <script src="js/common.js"></script>
 <script>
 (function () {
-  RHC.markCurrentNav('menu');
-
   Promise.all([
     RHC.fetchJSON('content/contact.json'),
-    RHC.fetchJSON('content/page-menu.json')
+    RHC.fetchJSON('content/page-menu.json'),
+    RHC.fetchJSON('content/navigation.json')
   ]).then(function (results) {
     var contact = results[0];
     var page = results[1];
+    var nav = results[2];
 
+    RHC.renderNav(nav.items, 'menu');
+    RHC.renderFooterNav(nav.items);
     RHC.bindStatics(document, { contact: contact });
 
     document.getElementById('breadcrumb-current').textContent = page.eyebrow;
