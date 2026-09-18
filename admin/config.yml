@@ -5,26 +5,25 @@
 #   1. Push this whole site to a GitHub repository.
 #   2. Connect that repository to Netlify (Site configuration > Build & deploy
 #      > Link repository), replacing the current manual/drag-and-drop deploy.
-#   3. Pick ONE backend below and delete the other block:
-#        a) "github" backend (simplest, but the client needs a GitHub login), or
-#        b) DecapBridge (https://decapbridge.com) — free, lets your client log
-#           in with just an email address. Sign up, connect this repo, and
-#           DecapBridge will hand you a backend block to paste in below,
-#           replacing the placeholder one.
 # ---------------------------------------------------------------------------
 
 backend:
-  name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <-- replace this
+  name: git-gateway
+  repo: todd-ds/redhotcod
   branch: main
+  identity_url: https://auth.decapbridge.com/sites/fd719729-f7a0-43ff-8c13-1b3bc1abc78b
+  gateway_url: https://gateway.decapbridge.com
 
-# If using DecapBridge instead, delete the block above and paste the one
-# DecapBridge gives you after you connect this repo on decapbridge.com —
-# it will look something like:
-# backend:
-#   name: git-gateway
-#   base_url: https://<your-decapbridge-subdomain>.decapbridge.com
-#   branch: main
+commit_messages:
+  create: Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+  update: Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+  delete: Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+  uploadMedia: Upload "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
+  deleteMedia: Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
+  openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+site_url: https://redhotcod.netlify.app
 
 media_folder: "images"
 public_folder: "/images"
