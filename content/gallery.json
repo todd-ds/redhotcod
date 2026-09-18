@@ -1,0 +1,11 @@
+{
+  "intro": "Straight off our own feed — swap these for fresh posts any time.",
+  "items": [
+    { "theme": "ph-chili", "image": "images/poke-cups.jpg", "alt": "Rows of poke and ceviche cups in a chilled display case", "caption": "Poke bowls, prepped fresh daily" },
+    { "theme": "ph-ink", "image": "images/nasi-night-poster.jpg", "alt": "Nasi Night promotional poster, every Tuesday from 5pm, $15", "caption": "Nasi Night — Tuesdays from 5pm, $15" },
+    { "theme": "ph-teal", "image": "images/hiring-poster.jpg", "alt": "We're Hiring poster for FOH, kitchen staff and bartenders", "caption": "We're hiring — join the crew" },
+    { "theme": "ph-gold", "image": "images/hero-takeaway.jpg", "alt": "A box of beer-battered fish, calamari, prawns and chips on a picnic blanket", "caption": "Beach day, straight from the box" },
+    { "theme": "ph-chili", "image": "images/dish-spread.jpg", "alt": "An overhead spread of spring rolls, fish and chips, coleslaw and satay skewers", "caption": "Fresh off the pass" },
+    { "theme": "ph-ink", "image": "images/nasi-bowls-b.jpg", "alt": "Two bowls of nasi goreng topped with a fried egg", "caption": "Nasi goreng, fried egg on top" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "eyebrow": "What's Cooking",
+  "title": "The menu, at a glance",
+  "items": [
+    { "title": "Beer-Battered Fish", "body": "Cod, dory, snapper, flake or sea perch, battered fresh to order." },
+    { "title": "Grilled Fish of the Day", "body": "Simply grilled and served with your choice of sides." },
+    { "title": "Coconut Prawns", "body": "Crumbed in coconut and served with sweet chilli." },
+    { "title": "Calamari & Oysters", "body": "Fresh off the boat, cooked light and crisp." },
+    { "title": "Balinese Chicken Satay", "body": "House-made satay sauce — a customer favourite." },
+    { "title": "Nasi Goreng", "body": "Indonesian fried rice, a Red Hot Cod classic." },
+    { "title": "Bali Bowl & Poke Bowl", "body": "Fresh, light and packed with flavour." },
+    { "title": "Garden & Greek Salads", "body": "For the lighter option, made fresh daily." }
+  ],
+  "note": "Full menu, current pricing and gluten-free options are on our online ordering page. Weekend and public-holiday surcharges apply.",
+  "cta_text": "See Full Menu & Order Online"
+}

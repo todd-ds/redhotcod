@@ -1,0 +1,37 @@
+{
+  "slides": [
+    {
+      "theme": "ph-chili",
+      "image": "images/hero-takeaway.jpg",
+      "alt": "A box of beer-battered fish, calamari, prawns and chips on a picnic blanket at the beach",
+      "eyebrow": "Fish & Chips Takeaway",
+      "badge": "",
+      "title": "Served Fresh Daily.\nIt's Why We're No.1.",
+      "body": "Wild-caught cod, flake, dory, snapper and Tassie salmon, beer-battered, grilled or crumbed, with gluten-free batter on request. Walk up, order online, eat on the sand.",
+      "cta_text": "Order Takeaway",
+      "cta_href": "#menu"
+    },
+    {
+      "theme": "ph-teal",
+      "image": "images/bar-scene.jpg",
+      "alt": "A crowd cheering under string lights at the Red Hot Cod bar, DJ decks in the foreground",
+      "eyebrow": "The Cod Bar",
+      "badge": "New",
+      "title": "Cold Beer.\nHot Off The Grill.",
+      "body": "Our new bar concept lands this summer: small plates, local beer and an ocean view, right next door to the original shop.",
+      "cta_text": "Explore The Cod Bar",
+      "cta_href": "#cod-bar"
+    },
+    {
+      "theme": "ph-gold",
+      "image": "images/nasi-bowls-a.jpg",
+      "alt": "Two bowls of nasi goreng topped with a fried egg, shot from above on a wooden table",
+      "eyebrow": "The Restaurant",
+      "badge": "",
+      "title": "Sit Down.\nSlow Down.",
+      "body": "Table service, the full menu and a wine list to match, for when you want to stay a while and watch the sun go down over Burleigh.",
+      "cta_text": "Book A Table",
+      "cta_href": "#restaurant"
+    }
+  ]
+}

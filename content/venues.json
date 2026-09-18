@@ -1,0 +1,40 @@
+{
+  "venues": [
+    {
+      "id": "takeaway",
+      "theme": "ph-chili",
+      "image": "images/dish-spread.jpg",
+      "alt": "An overhead spread of spring rolls, beer-battered fish and chips, coleslaw and satay skewers",
+      "caption": "Fish & chips, fresh from the fryer",
+      "title": "Fish & Chips Takeaway",
+      "badge": "",
+      "body": "Where it all started. Order at the counter or online, and take it across the road to the beach.",
+      "link_text": "Order takeaway",
+      "link_href": "#menu"
+    },
+    {
+      "id": "cod-bar",
+      "theme": "ph-teal",
+      "image": "images/bar-scene.jpg",
+      "alt": "A crowd cheering at the Red Hot Cod bar under string lights, DJ decks in the foreground",
+      "caption": "The Cod Bar — cold beer, good nights",
+      "title": "The Cod Bar",
+      "badge": "New",
+      "body": "Small plates, cold beer and good light till late. Opening this summer, right next door.",
+      "link_text": "Learn more",
+      "link_href": "#cod-bar"
+    },
+    {
+      "id": "restaurant",
+      "theme": "ph-gold",
+      "image": "images/nasi-bowls-b.jpg",
+      "alt": "Two bowls of nasi goreng topped with a fried egg, shot from above",
+      "caption": "Table service, full menu, sunset views",
+      "title": "The Restaurant",
+      "badge": "",
+      "body": "Full table service and the whole menu, from wild-caught fish of the day to Bali bowls.",
+      "link_text": "Reserve a table",
+      "link_href": "#restaurant"
+    }
+  ]
+}

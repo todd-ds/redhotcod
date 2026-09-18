@@ -1,0 +1,130 @@
+# ---------------------------------------------------------------------------
+# Decap CMS configuration for the Red Hot Cod website.
+#
+# BEFORE THIS WORKS YOU MUST:
+#   1. Push this whole site to a GitHub repository.
+#   2. Connect that repository to Netlify (Site configuration > Build & deploy
+#      > Link repository), replacing the current manual/drag-and-drop deploy.
+#   3. Pick ONE backend below and delete the other block:
+#        a) "github" backend (simplest, but the client needs a GitHub login), or
+#        b) DecapBridge (https://decapbridge.com) — free, lets your client log
+#           in with just an email address. Sign up, connect this repo, and
+#           DecapBridge will hand you a backend block to paste in below,
+#           replacing the placeholder one.
+# ---------------------------------------------------------------------------
+
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <-- replace this
+  branch: main
+
+# If using DecapBridge instead, delete the block above and paste the one
+# DecapBridge gives you after you connect this repo on decapbridge.com —
+# it will look something like:
+# backend:
+#   name: git-gateway
+#   base_url: https://<your-decapbridge-subdomain>.decapbridge.com
+#   branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "content"
+    label: "Website Content"
+    files:
+      - name: "contact"
+        label: "Contact, Hours & Links"
+        file: "content/contact.json"
+        fields:
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Hours (shown in the top bar)", name: "hours", widget: "string" }
+          - { label: "Surcharge note", name: "surcharge_note", widget: "string" }
+          - { label: "Phone (display text)", name: "phone_display", widget: "string" }
+          - { label: "Phone (tel: link, e.g. tel:0756070084)", name: "phone_href", widget: "string" }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+          - { label: "Instagram handle (e.g. @redhotcodburleigh)", name: "instagram_handle", widget: "string" }
+          - { label: "Facebook URL", name: "facebook_url", widget: "string" }
+          - { label: "Online ordering URL", name: "order_url", widget: "string" }
+
+      - name: "hero"
+        label: "Homepage Hero Slider"
+        file: "content/hero.json"
+        fields:
+          - name: "slides"
+            label: "Slides"
+            widget: "list"
+            summary: "{{fields.eyebrow}}"
+            fields:
+              - { label: "Theme colour", name: "theme", widget: "select", options: ["ph-chili", "ph-teal", "ph-gold", "ph-ink"] }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text (for accessibility)", name: "alt", widget: "string" }
+              - { label: "Small label above the heading", name: "eyebrow", widget: "string" }
+              - { label: "Badge text (leave blank for none, e.g. New)", name: "badge", widget: "string", required: false }
+              - { label: "Headline", name: "title", widget: "text", hint: "Use a line break for a two-line headline" }
+              - { label: "Description", name: "body", widget: "text" }
+              - { label: "Button text", name: "cta_text", widget: "string" }
+              - { label: "Button link", name: "cta_href", widget: "string" }
+
+      - name: "venues"
+        label: "Three Venue Cards"
+        file: "content/venues.json"
+        fields:
+          - name: "venues"
+            label: "Venues"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Section ID (used for menu links, don't change lightly)", name: "id", widget: "string" }
+              - { label: "Theme colour", name: "theme", widget: "select", options: ["ph-chili", "ph-teal", "ph-gold", "ph-ink"] }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Caption on the photo", name: "caption", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Badge text (leave blank for none)", name: "badge", widget: "string", required: false }
+              - { label: "Description", name: "body", widget: "text" }
+              - { label: "Link text", name: "link_text", widget: "string" }
+              - { label: "Link target", name: "link_href", widget: "string" }
+
+      - name: "about"
+        label: "Our Story Section"
+        file: "content/about.json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "title", widget: "string" }
+          - { label: "Body text", name: "body", widget: "text" }
+          - { label: "Checklist points", name: "checklist", widget: "list" }
+          - { label: "Photo", name: "image", widget: "image" }
+          - { label: "Photo alt text", name: "alt", widget: "string" }
+          - { label: "Caption on the photo", name: "image_caption", widget: "string" }
+
+      - name: "menu"
+        label: "Menu Section"
+        file: "content/menu.json"
+        fields:
+          - { label: "Small label", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "title", widget: "string" }
+          - name: "items"
+            label: "Menu Items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Dish name", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+          - { label: "Note under the menu grid", name: "note", widget: "text" }
+          - { label: "Button text", name: "cta_text", widget: "string" }
+
+      - name: "gallery"
+        label: "Instagram-style Gallery"
+        file: "content/gallery.json"
+        fields:
+          - { label: "Intro line", name: "intro", widget: "text" }
+          - name: "items"
+            label: "Photos"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Theme colour (fallback if photo is slow to load)", name: "theme", widget: "select", options: ["ph-chili", "ph-teal", "ph-gold", "ph-ink"] }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }

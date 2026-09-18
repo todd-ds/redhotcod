@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Red Hot Cod, Burleigh Heads — Fish &amp; Chips, Cod Bar &amp; Restaurant</title>
+<meta name="description" content="Wild-caught fish and chips, the new Cod Bar and full table service in the restaurant, all across the road from Burleigh Heads beach.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+    background: #FBF3E7;
+    color: #221812;
+  }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 {
+    font-family: 'Anton', system-ui, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.005em;
+  }
+  .container { max-width: 1240px; margin-inline: auto; padding-inline: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 999px;
+    font-family: 'Schibsted Grotesk', system-ui, sans-serif; font-weight: 700; font-size: 15px;
+    border: 2px solid transparent; cursor: pointer; white-space: nowrap;
+  }
+  .btn-chili { background: #D6401F; color: #FFF9F0; }
+  .btn-chili:hover { background: #B93417; }
+  .btn-ghost { background: transparent; color: #FFF9F0; border-color: rgba(255,249,240,0.7); }
+  .btn-ghost:hover { border-color: #FFF9F0; }
+  .btn-ink { background: #221812; color: #FBF3E7; }
+  .btn-ink:hover { background: #3a2a1f; }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .badge-new {
+    display: inline-block; background: #2455B8; color: #FFF9F0; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
+    margin-left: 8px; vertical-align: middle;
+  }
+  .ph-block { position: relative; overflow: hidden; display: flex; align-items: flex-end; color: #FFF9F0; }
+  .ph-caption {
+    position: relative; z-index: 2; padding: 10px 14px; margin: 14px; border-radius: 8px;
+    background: rgba(10,8,6,0.55); font-size: 13px; font-weight: 600;
+  }
+  .ph-block img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+  .ph-chili { background: linear-gradient(135deg, #8a2410, #D6401F); }
+  .ph-teal { background: linear-gradient(135deg, #0c211f, #24443f); }
+  .ph-gold { background: linear-gradient(135deg, #2a1c0d, #8a5a1e); }
+  .ph-ink { background: linear-gradient(135deg, #171010, #3a2a1f); }
+
+  .utility-bar { background: #16302E; color: #F3ECE0; }
+  .utility-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; padding-block: 10px; font-size: 13px; }
+  .utility-left, .utility-right { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  .utility-item { display: flex; align-items: center; gap: 6px; }
+  .utility-right a:hover { color: #E8A33D; }
+
+  .nav { background: #FBF3E7; border-bottom: 1px solid rgba(34,24,18,0.1); position: sticky; top: 0; z-index: 20; }
+  .nav .container { display: flex; align-items: center; justify-content: space-between; padding-block: 16px; gap: 24px; }
+  .logo { font-family: 'Anton', system-ui, sans-serif; font-weight: 400; text-transform: uppercase; font-size: 24px; letter-spacing: 0.01em; display: flex; align-items: center; gap: 8px; }
+  .logo .logo-hot { color: #D6401F; }
+  .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: #D6401F; display: inline-block; }
+  .nav-links { display: flex; align-items: center; gap: 32px; font-weight: 600; font-size: 15px; flex-wrap: wrap; }
+  .nav-links a:hover { color: #D6401F; }
+  .nav-cta { display: flex; align-items: center; gap: 16px; }
+
+  .hero { position: relative; width: 100%; height: 640px; overflow: hidden; }
+  .hero-slide { position: absolute; inset: 0; display: none; align-items: center; }
+  .hero-slide.active { display: flex; }
+  .hero-slide::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(10,8,6,0.62) 0%, rgba(10,8,6,0.28) 55%, rgba(10,8,6,0.1) 100%);
+    z-index: 1;
+  }
+  .hero-slide-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero-copy { position: relative; z-index: 2; max-width: 600px; padding-inline: 32px; color: #FFF9F0; }
+  .hero-copy h1 { font-size: 52px; line-height: 1.06; font-weight: 800; white-space: pre-line; margin-block: 18px 16px; }
+  .hero-copy p { font-size: 17px; line-height: 1.55; color: rgba(255,249,240,0.88); margin: 0 0 28px; max-width: 480px; }
+  .hero-nav-btn {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 46px; height: 46px; border-radius: 50%;
+    background: rgba(251,243,231,0.16); border: 1px solid rgba(251,243,231,0.5); color: #FFF9F0;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+  }
+  .hero-nav-btn:hover { background: rgba(251,243,231,0.3); }
+  .hero-prev { left: 24px; }
+  .hero-next { right: 24px; }
+  .hero-dots { position: absolute; bottom: 26px; left: 0; right: 0; z-index: 5; display: flex; justify-content: center; gap: 10px; }
+  .dot { width: 34px; height: 4px; border-radius: 999px; background: rgba(251,243,231,0.35); border: none; cursor: pointer; padding: 0; }
+  .dot.active { background: #4C86F0; }
+
+  .venues { padding-block: 96px; }
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+  .section-head .eyebrow { color: #D6401F; }
+  .section-head h2 { font-size: 38px; font-weight: 800; margin-top: 10px; }
+  .venue-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .venue-card { background: #FFFFFF; border-radius: 18px; overflow: hidden; border: 1px solid rgba(34,24,18,0.08); }
+  .venue-card .ph-block { height: 200px; }
+  .venue-body { padding: 26px; display: flex; flex-direction: column; gap: 12px; }
+  .venue-body h3 { font-size: 21px; font-weight: 700; }
+  .venue-body p { font-size: 15px; line-height: 1.6; color: rgba(34,24,18,0.72); margin: 0; }
+  .venue-link { font-weight: 700; font-size: 14px; color: #D6401F; display: inline-flex; align-items: center; gap: 6px; }
+
+  .about { padding-block: 96px; background: #FFFFFF; }
+  .about .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+  .about-copy p { font-size: 16px; line-height: 1.7; color: rgba(34,24,18,0.78); margin: 18px 0 28px; }
+  .about-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+  .about-list li { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
+  .about-list .tick { color: #D6401F; flex-shrink: 0; }
+  .about-image .ph-block { height: 460px; border-radius: 20px; }
+
+  .menu { padding-block: 96px; }
+  .menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  .menu-item { background: #FFFFFF; border: 1px solid rgba(34,24,18,0.08); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+  .menu-item .icon-wrap { width: 44px; height: 44px; border-radius: 12px; background: rgba(214,64,31,0.1); color: #D6401F; display: flex; align-items: center; justify-content: center; }
+  .menu-item h3 { font-size: 17px; font-weight: 700; }
+  .menu-item p { margin: 0; font-size: 14px; line-height: 1.5; color: rgba(34,24,18,0.68); }
+  .menu-note {
+    margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    background: #FBF3E7; border: 1px dashed rgba(34,24,18,0.25); border-radius: 14px; padding: 18px 24px;
+  }
+  .menu-note p { margin: 0; font-size: 14px; color: rgba(34,24,18,0.7); }
+
+  .gallery { padding-block: 96px; background: #16302E; color: #F3ECE0; }
+  .gallery .section-head .eyebrow { color: #4C86F0; }
+  .gallery .section-head h2 { color: #FFF9F0; }
+  .gallery .section-head p { color: rgba(243,236,224,0.75); font-size: 16px; margin-top: 14px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .gallery-grid .ph-block { height: 220px; border-radius: 14px; }
+  .gallery-cta { margin-top: 36px; display: flex; align-items: center; gap: 16px; }
+  .gallery-cta a { font-weight: 700; }
+
+  .visit { padding-block: 96px; }
+  .visit .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+  .visit-row { display: flex; align-items: center; gap: 14px; padding-block: 16px; border-bottom: 1px solid rgba(34,24,18,0.1); }
+  .visit-row:first-child { border-top: 1px solid rgba(34,24,18,0.1); }
+  .visit-row .icon-wrap { width: 40px; height: 40px; border-radius: 10px; background: rgba(214,64,31,0.1); color: #D6401F; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .visit-row div p { margin: 0; font-size: 14px; color: rgba(34,24,18,0.68); }
+  .visit-row div strong { font-size: 15px; }
+  .visit-map .ph-block { height: 380px; border-radius: 20px; }
+
+  footer { background: #221812; color: rgba(251,243,231,0.82); padding-block: 64px 32px; }
+  footer .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(251,243,231,0.14); }
+  footer .logo { color: #FBF3E7; }
+  footer .footer-tagline { font-size: 14px; line-height: 1.6; margin-top: 14px; max-width: 260px; color: rgba(251,243,231,0.62); }
+  footer h4 { font-family: 'Schibsted Grotesk', system-ui, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(251,243,231,0.5); margin: 0 0 18px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
+  footer ul a:hover { color: #E8A33D; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 28px; font-size: 13px; color: rgba(251,243,231,0.5); }
+  .social-row { display: flex; gap: 14px; }
+  .social-row a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(251,243,231,0.25); display: flex; align-items: center; justify-content: center; }
+  .social-row a:hover { border-color: #E8A33D; color: #E8A33D; }
+
+  @media (max-width: 900px) {
+    .venue-grid { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about .container, .visit .container { grid-template-columns: 1fr; }
+    .about-image { order: -1; }
+    footer .footer-top { grid-template-columns: 1fr 1fr; }
+    .hero { height: 560px; }
+    .hero-copy h1 { font-size: 38px; }
+    .nav-links { display: none; }
+    .utility-left { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div style="width: 100%; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-left">
+        <span class="utility-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.4 7-13a7 7 0 1 0-14 0c0 5.6 7 13 7 13Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+          <span data-bind="contact.address"></span>
+        </span>
+        <span class="utility-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+          <span data-bind="contact.hours"></span>
+        </span>
+      </div>
+      <div class="utility-right">
+        <a data-bind-href="contact.phone_href" class="utility-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z"></path></svg>
+          <span data-bind="contact.phone_display"></span>
+        </a>
+        <a data-bind-href="contact.instagram_url" aria-label="Red Hot Cod on Instagram" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container">
+      <div class="logo"><span class="logo-dot"></span>RED <span class="logo-hot">HOT</span> COD</div>
+      <nav class="nav-links">
+        <a href="#takeaway">Takeaway</a>
+        <a href="#cod-bar">Cod Bar</a>
+        <a href="#restaurant">Restaurant</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#menu" class="btn btn-chili">Order Online</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div id="hero-slides"></div>
+    <button class="hero-nav-btn hero-prev" aria-label="Previous slide">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"></path></svg>
+    </button>
+    <button class="hero-nav-btn hero-next" aria-label="Next slide">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg>
+    </button>
+    <div class="hero-dots" id="hero-dots"></div>
+  </section>
+
+  <section class="venues" id="explore">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Three Ways To Cod</span>
+        <h2>One kitchen, three ways to eat it</h2>
+      </div>
+      <div class="venue-grid" id="venue-grid"></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-copy">
+        <span class="eyebrow" style="color: #D6401F;" id="about-eyebrow"></span>
+        <h2 style="font-size: 34px; font-weight: 800; margin-top: 10px;" id="about-title"></h2>
+        <p id="about-body"></p>
+        <ul class="about-list" id="about-checklist"></ul>
+      </div>
+      <div class="about-image">
+        <div class="ph-block ph-ink" style="align-items: flex-end;">
+          <img id="about-image" src="" alt="">
+          <div class="ph-caption" id="about-image-caption"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color: #D6401F;" id="menu-eyebrow"></span>
+        <h2 id="menu-title"></h2>
+      </div>
+      <div class="menu-grid" id="menu-grid"></div>
+      <div class="menu-note">
+        <p id="menu-note"></p>
+        <a data-bind-href="contact.order_url" class="btn btn-ink" id="menu-cta"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-bind="contact.instagram_handle"></span>
+        <h2>Fresh from Burleigh Heads</h2>
+        <p id="gallery-intro"></p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <div class="gallery-cta">
+        <a data-bind-href="contact.instagram_url" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
+          <span>Follow <span data-bind="contact.instagram_handle"></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="container">
+      <div class="visit-copy">
+        <span class="eyebrow" style="color: #D6401F;">Visit Us</span>
+        <h2 style="font-size: 34px; font-weight: 800; margin-top: 10px; margin-bottom: 20px;">Come as you are</h2>
+
+        <div class="visit-row">
+          <div class="icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-7.4 7-13a7 7 0 1 0-14 0c0 5.6 7 13 7 13Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></div>
+          <div><strong data-bind="contact.address"></strong><p>Burleigh Heads, QLD — across the road from the beach</p></div>
+        </div>
+        <div class="visit-row">
+          <div class="icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div>
+          <div><strong data-bind="contact.hours"></strong><p data-bind="contact.surcharge_note"></p></div>
+        </div>
+        <div class="visit-row">
+          <div class="icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z"></path></svg></div>
+          <div><strong data-bind="contact.phone_display"></strong><p>Call ahead for pickup, or order online</p></div>
+        </div>
+
+        <a data-bind-href="contact.order_url" class="btn btn-chili" style="margin-top: 28px;">Order Online</a>
+      </div>
+      <div class="visit-map">
+        <div class="ph-block ph-teal" style="align-items: center; justify-content: center;">
+          <span style="position:absolute; top:14px; right:14px; background:rgba(251,243,231,0.92); color:#221812; font-size:11px; font-weight:600; padding:6px 12px; border-radius:999px; z-index:3;">Map placeholder</span>
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FFF9F0" stroke-width="1.6"><path d="M12 22s7-7.4 7-13a7 7 0 1 0-14 0c0 5.6 7 13 7 13Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="logo"><span class="logo-dot"></span>RED <span class="logo-hot">HOT</span> COD</div>
+          <p class="footer-tagline">Served fresh daily across the road from Burleigh Heads beach. It's why we're No.1.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#takeaway">Takeaway</a></li>
+            <li><a href="#cod-bar">Cod Bar</a></li>
+            <li><a href="#restaurant">Restaurant</a></li>
+            <li><a href="#menu">Menu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="#visit">Hours &amp; Location</a></li>
+            <li><a data-bind-href="contact.phone_href"><span data-bind="contact.phone_display"></span></a></li>
+            <li><a href="#about">Our Story</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <div class="social-row">
+            <a data-bind-href="contact.instagram_url" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
+            </a>
+            <a data-bind-href="contact.facebook_url" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4v-2a1 1 0 0 1 1-1Z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Red Hot Cod, Burleigh Heads. All rights reserved.</span>
+        <span>Content managed with Decap CMS.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  function byPath(obj, path) {
+    return path.split('.').reduce(function (o, k) { return (o || {})[k]; }, obj);
+  }
+
+  function bindStatics(data) {
+    document.querySelectorAll('[data-bind]').forEach(function (el) {
+      var v = byPath(data, el.getAttribute('data-bind'));
+      if (v != null) el.textContent = v;
+    });
+    document.querySelectorAll('[data-bind-href]').forEach(function (el) {
+      var v = byPath(data, el.getAttribute('data-bind-href'));
+      if (v != null) el.setAttribute('href', v);
+    });
+  }
+
+  function renderHero(hero) {
+    var slidesEl = document.getElementById('hero-slides');
+    var dotsEl = document.getElementById('hero-dots');
+    slidesEl.innerHTML = hero.slides.map(function (s, i) {
+      var badge = s.badge ? '<span class="badge-new">' + s.badge + '</span>' : '';
+      return (
+        '<div class="hero-slide ' + s.theme + (i === 0 ? ' active' : '') + '" data-slide="' + i + '">' +
+          '<img class="hero-slide-img" src="' + s.image + '" alt="' + s.alt + '">' +
+          '<div class="container" style="width:100%;">' +
+            '<div class="hero-copy">' +
+              '<span class="eyebrow" style="color:#4C86F0;">' + s.eyebrow + badge + '</span>' +
+              '<h1>' + s.title + '</h1>' +
+              '<p>' + s.body + '</p>' +
+              '<a href="' + s.cta_href + '" class="btn btn-chili">' + s.cta_text + '</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+    dotsEl.innerHTML = hero.slides.map(function (s, i) {
+      return '<button class="dot' + (i === 0 ? ' active' : '') + '" data-dot="' + i + '" aria-label="Show ' + s.eyebrow + ' slide"></button>';
+    }).join('');
+
+    var slides = Array.prototype.slice.call(slidesEl.querySelectorAll('.hero-slide'));
+    var dots = Array.prototype.slice.call(dotsEl.querySelectorAll('.dot'));
+    var current = 0;
+    function show(i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach(function (s, idx) { s.classList.toggle('active', idx === current); });
+      dots.forEach(function (d, idx) { d.classList.toggle('active', idx === current); });
+    }
+    var prevBtn = document.querySelector('.hero-prev');
+    var nextBtn = document.querySelector('.hero-next');
+    if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); });
+    dots.forEach(function (d, idx) { d.addEventListener('click', function () { show(idx); }); });
+    setInterval(function () { show(current + 1); }, 6500);
+  }
+
+  function renderVenues(venues) {
+    var el = document.getElementById('venue-grid');
+    el.innerHTML = venues.map(function (v) {
+      var badge = v.badge ? '<span class="badge-new">' + v.badge + '</span>' : '';
+      return (
+        '<div class="venue-card" id="' + v.id + '">' +
+          '<div class="ph-block ' + v.theme + '">' +
+            '<img src="' + v.image + '" alt="' + v.alt + '">' +
+            '<div class="ph-caption">' + v.caption + '</div>' +
+          '</div>' +
+          '<div class="venue-body">' +
+            '<h3>' + v.title + ' ' + badge + '</h3>' +
+            '<p>' + v.body + '</p>' +
+            '<a href="' + v.link_href + '" class="venue-link">' + v.link_text +
+              ' <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>' +
+            '</a>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  function renderAbout(about) {
+    document.getElementById('about-eyebrow').textContent = about.eyebrow;
+    document.getElementById('about-title').textContent = about.title;
+    document.getElementById('about-body').textContent = about.body;
+    document.getElementById('about-image').src = about.image;
+    document.getElementById('about-image').alt = about.alt;
+    document.getElementById('about-image-caption').textContent = about.image_caption;
+    document.getElementById('about-checklist').innerHTML = about.checklist.map(function (item) {
+      return '<li><span class="tick">✓</span> ' + item + '</li>';
+    }).join('');
+  }
+
+  function renderMenu(menu) {
+    document.getElementById('menu-eyebrow').textContent = menu.eyebrow;
+    document.getElementById('menu-title').textContent = menu.title;
+    document.getElementById('menu-note').textContent = menu.note;
+    document.getElementById('menu-cta').textContent = menu.cta_text;
+    document.getElementById('menu-grid').innerHTML = menu.items.map(function (item) {
+      return (
+        '<div class="menu-item">' +
+          '<h3>' + item.title + '</h3>' +
+          '<p>' + item.body + '</p>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  function renderGallery(gallery) {
+    document.getElementById('gallery-intro').textContent = gallery.intro;
+    document.getElementById('gallery-grid').innerHTML = gallery.items.map(function (item) {
+      return (
+        '<div class="ph-block ' + item.theme + '">' +
+          '<img src="' + item.image + '" alt="' + item.alt + '">' +
+          '<div class="ph-caption">' + item.caption + '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  Promise.all([
+    fetch('content/contact.json').then(function (r) { return r.json(); }),
+    fetch('content/hero.json').then(function (r) { return r.json(); }),
+    fetch('content/venues.json').then(function (r) { return r.json(); }),
+    fetch('content/about.json').then(function (r) { return r.json(); }),
+    fetch('content/menu.json').then(function (r) { return r.json(); }),
+    fetch('content/gallery.json').then(function (r) { return r.json(); })
+  ])
+    .then(function (results) {
+      var data = {
+        contact: results[0],
+        hero: results[1],
+        venues: results[2].venues,
+        about: results[3],
+        menu: results[4],
+        gallery: results[5]
+      };
+      bindStatics(data);
+      renderHero(data.hero);
+      renderVenues(data.venues);
+      renderAbout(data.about);
+      renderMenu(data.menu);
+      renderGallery(data.gallery);
+    })
+    .catch(function (err) {
+      console.error('Could not load site content from /content/*.json', err);
+    });
+})();
+</script>
+
+</body>
+</html>
